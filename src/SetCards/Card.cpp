@@ -21,12 +21,21 @@ Card::Card(
 std::ostream& SetCards::operator << (std::ostream& o, const Card& target)
 {
 	o
-		<< "Nb: " << target.m_number << " "
-		<< "Sy: " << target.m_symbol << " "
-		<< "Sh: " << target.m_shading << " "
-		<< "Cl: " << target.m_color;
+		<< "Nb: " << static_cast<int>(target.m_number) << " "
+		<< "Sy: " << static_cast<int>(target.m_symbol) << " "
+		<< "Sh: " << static_cast<int>(target.m_shading) << " "
+		<< "Cl: " << static_cast<int>(target.m_color);
 	
 	return o;
+}
+
+bool SetCards::operator == (const Card& card1, const Card& card2)
+{
+	return
+		card1.m_number == card2.m_number &&
+		card1.m_symbol == card2.m_symbol &&
+		card1.m_shading == card2.m_shading &&
+		card1.m_color == card2.m_color;
 }
 
 Card& Card::operator = (const Card& other)

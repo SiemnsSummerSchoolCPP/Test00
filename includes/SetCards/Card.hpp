@@ -12,6 +12,7 @@ namespace SetCards
 		
 		// Operators
 		friend std::ostream& operator << (std::ostream& o, const Card& target);
+		friend bool operator == (const Card& card1, const Card& card2);
 		Card& operator = (const Card& other);
 		
 	private:

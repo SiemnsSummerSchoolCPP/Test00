@@ -2,30 +2,30 @@
 
 namespace SetCards
 {
-	enum Number
+	enum class Number
 	{
-		ONE = 1,
+		ONE = 0,
 		TWO,
 		THREE
 	};
 
-	enum Symbol
+	enum class Symbol
 	{
-		DIAMOND,
+		DIAMOND = 0,
 		SQUIGGLE,
 		OVAL
 	};
 
-	enum Shading
+	enum class Shading
 	{
-		SOLID,
+		SOLID = 0,
 		STRIPED,
 		OPEN
 	};
 
-	enum Color
+	enum class Color
 	{
-		RED,
+		RED = 0,
 		GREEN,
 		BLUE
 	};
