@@ -5,6 +5,7 @@
 #include "Dealer.hpp"
 #include "Player.hpp"
 #include "GameBoard.hpp"
+#include "CardSet.h"
 
 namespace SetGame
 {
@@ -19,7 +20,8 @@ namespace SetGame
 		GameBoard m_gameBoard;
 		Dealer m_dealer;
 		
-		bool validateSet(const SetCards::Card* const* set) const;
-		bool findSets(size_t pos1, size_t pos2, size_t pos3);
+		bool validateSet(const CardSet& set) const;
+		void removeSetFromGame(const CardSet& set);
+		CardSet findSet(size_t pos0, size_t pos1, size_t pos2);
 	};
 }

@@ -8,6 +8,15 @@ size_t GameBoard::getNbOfCards() const
 	return m_cards.size();
 }
 
+void GameBoard::removeCard(const SetCards::Card& card)
+{
+	const auto findResult = std::find(m_cards.begin(), m_cards.end(), &card);
+	if (findResult == m_cards.end())
+		throw "Can't remove card: No such card.";
+	
+	m_cards.erase(findResult);
+}
+
 const SetCards::Card& GameBoard::getCard(size_t index) const
 {
 	if (index >= m_cards.size())

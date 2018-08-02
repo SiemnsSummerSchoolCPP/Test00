@@ -11,7 +11,7 @@ namespace SetGame
 	public:
 		size_t getNbOfCards() const;
 		
-//		const SetCards::Card* removeCard
+		void removeCard(const SetCards::Card& card);
 		const SetCards::Card& getCard(size_t index) const;
 		void addCard(const SetCards::Card* newCard);
 		

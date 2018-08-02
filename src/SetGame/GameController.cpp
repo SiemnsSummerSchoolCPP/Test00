@@ -1,10 +1,11 @@
 #include "GameController.hpp"
+#include "CardSet.h"
 
 using namespace SetGame;
 
-#define CHECK_SET_FIELD(SET, FIELD) \
-	(SET[0]->FIELD() == SET[1]->FIELD() && \
-	 SET[0]->FIELD() == SET[2]->FIELD())
+#define CHECK_SET_FIELD(set, FIELD) \
+	(set.card0.FIELD() == set.card1.FIELD() && \
+	 set.card0.FIELD() == set.card2.FIELD())
 
 GameController::GameController(const size_t nbOfPlayers)
 {
@@ -20,19 +21,30 @@ GameController::GameController(const size_t nbOfPlayers)
 ** Private members
 */
 
-bool GameController::validateSet(const SetCards::Card* const* const set) const
+bool GameController::validateSet(const CardSet& set) const
 {
 	return
 		CHECK_SET_FIELD(set, getNumber) ||
 		CHECK_SET_FIELD(set, getSymbol) ||
 		CHECK_SET_FIELD(set, getShading) ||
 		CHECK_SET_FIELD(set, getColor);
-	
 }
 
-bool GameController::findSets(size_t pos1, size_t pos2, size_t pos3)
+void GameController::removeSetFromGame(const CardSet& set)
 {
-	throw;
+	m_gameBoard.removeCard(set.card0);
+	m_gameBoard.removeCard(set.card1);
+	m_gameBoard.removeCard(set.card2);
+}
+
+CardSet GameController::findSet(size_t pos0, size_t pos1, size_t pos2)
+{
+	return CardSet
+	{
+		m_gameBoard.getCard(pos0),
+		m_gameBoard.getCard(pos1),
+		m_gameBoard.getCard(pos2),
+	};
 }
 
 

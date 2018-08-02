@@ -4,6 +4,10 @@ using namespace SetCards;
 
 int main()
 {
-//	auto deck = Deck();
+	while (true)
+	{
+	
+	}
+	
 	return 0;
 }
