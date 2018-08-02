@@ -18,6 +18,22 @@ GameController::GameController(const size_t nbOfPlayers)
 }
 
 /*
+** Public methods.
+*/
+
+void GameController::play()
+{
+	while (true)
+	{
+		for (size_t i = 0; i < m_nbOfPlayers; i++)
+		{
+			const auto player = m_players[i];
+			
+		}
+	}
+}
+
+/*
 ** Private members
 */
 

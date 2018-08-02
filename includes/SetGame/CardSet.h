@@ -4,6 +4,7 @@
 
 namespace SetGame
 {
+	// transform it into an array.
 	struct CardSet
 	{
 		const SetCards::Card& card0;

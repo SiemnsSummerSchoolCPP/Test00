@@ -14,6 +14,8 @@ namespace SetGame
 	public:
 		GameController(size_t nbOfPlayers);
 		
+		void play();
+		
 	private:
 		size_t m_nbOfPlayers;
 		Player** m_players;
