@@ -4,6 +4,6 @@ using namespace SetCards;
 
 int main()
 {
-	auto deck = Deck();
+//	auto deck = Deck();
 	return 0;
 }

@@ -10,6 +10,12 @@ namespace SetCards
 	public:
 		Card(Number number, Symbol symbol, Shading shading, Color color);
 		
+		// Getters.
+		Number getNumber() const;
+		Symbol getSymbol() const;
+		Shading getShading() const;
+		Color getColor() const;
+		
 		// Operators
 		friend std::ostream& operator << (std::ostream& o, const Card& target);
 		friend bool operator == (const Card& card1, const Card& card2);

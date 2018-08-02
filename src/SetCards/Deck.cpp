@@ -31,6 +31,9 @@ void Deck::shuffle()
 
 const Card& Deck::dealACard()
 {
+	if (m_cardIndex >= Deck::totalNbOfCards)
+		throw NoCardsAvailable();
+	
 	return *m_cards[m_cardIndex++];
 }
 
@@ -78,3 +81,11 @@ bool Deck::cardsAreUnique(const CardsContainer& cards)
 	return true;
 }
 
+/*
+** Exceptions
+*/
+
+const char* Deck::NoCardsAvailable::what() const throw()
+{
+	return "No cards available";
+}

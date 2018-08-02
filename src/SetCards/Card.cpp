@@ -15,6 +15,30 @@ Card::Card(
 }
 
 /*
+** Getters
+*/
+
+Number Card::getNumber() const
+{
+	return m_number;
+}
+
+Symbol Card::getSymbol() const
+{
+	return m_symbol;
+}
+
+Shading Card::getShading() const
+{
+	return m_shading;
+}
+
+Color Card::getColor() const
+{
+	return m_color;
+}
+
+/*
 ** Operators
 */
 

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.0 FATAL_ERROR)
-project(Exe)
+project(SetGame)
 
 set(CMAKE_CXX_STANDARD 11)
 

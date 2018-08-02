@@ -8,6 +8,8 @@ namespace SetCards
 	class Deck
 	{
 	public:
+		struct NoCardsAvailable;
+	
 		Deck();
 		
 		void shuffle();
@@ -23,5 +25,10 @@ namespace SetCards
 		// Static helpers.
 		static CardsContainer getAllCombinationsOfCards();
 		static bool cardsAreUnique(const CardsContainer& cards);
+	};
+	
+	struct Deck::NoCardsAvailable : public std::exception
+	{
+		const char* what() const throw();
 	};
 }
